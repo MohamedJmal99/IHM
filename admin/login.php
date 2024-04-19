@@ -13,8 +13,19 @@ if(!isset($_SESSION['system'])){
 ob_end_flush();
 ?>
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap4" />
+
+		<!-- Bootstrap CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+		<link href="css/tiny-slider.css" rel="stylesheet">
+		<link href="css/style1.css" rel="stylesheet">
 
   <title><?php echo $_SESSION['system']['name'] ?></title>
  	
@@ -87,31 +98,52 @@ div#login-right::before {
 <body>
 
 
-  <main id="main" class=" bg-dark">
-  		<div id="login-left">
-  		</div>
+ 
+  	<div class="untree_co-section">
+      <div class="container">
 
-  		<div id="login-right">
-  			<div class="card col-md-8">
-  				<div class="card-body">
-  						
-  					<form id="login-form" >
-  						<div class="form-group">
-  							<label for="username" class="control-label">Username</label>
-  							<input type="text" id="username" name="username" class="form-control">
-  						</div>
-  						<div class="form-group">
-  							<label for="password" class="control-label">Password</label>
-  							<input type="password" id="password" name="password" class="form-control">
-  						</div>
-  						<center><button class="btn-sm btn-block btn-wave col-md-4 btn-primary">Login</button></center>
-  					</form>
-  				</div>
-  			</div>
-  		</div>
+        <div class="block">
+          <div class="row justify-content-center">
+
+
+            <div class="col-md-8 col-lg-8 pb-4">
+
+
+				<form id="login-form" >
+				
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label class="text-black" for="username">Username</label>
+                      <input type="text" class="form-control" id="username" name="username">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+				<div class="col-6">
+                  <label class="text-black" for="password">Password</label>
+                 
+				  <input type="password" class="form-control" id="password" name="password">
+                </div></div>
+
+
+
+                <button type="submit" class="btn btn-primary-hover-outline">Login</button>
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
    
 
-  </main>
+  
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
