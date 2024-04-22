@@ -1,85 +1,154 @@
 <?php include('db_connect.php');?>
 
-<div class="container-fluid">
-	
-	<div class="col-lg-12">
-		<div class="row">
-			<!-- FORM Panel -->
-			<div class="col-md-4">
-			<form action="" id="manage-category">
-				<div class="card">
-					<div class="card-header">
-						    Category Form
-				  	</div>
-					<div class="card-body">
-							<input type="hidden" name="id">
-							<div class="form-group">
-								<label class="control-label">Name</label>
-								<input type="text" class="form-control" name="name">
-							</div>
-					</div>
-							
-					<div class="card-footer">
-						<div class="row">
-							<div class="col-md-12">
-								<button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Save</button>
-								<button class="btn btn-sm btn-default col-sm-3" type="button" onclick="$('#manage-category').get(0).reset()"> Cancel</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</form>
-			</div>
-			<!-- FORM Panel -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category Interface</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Ajout de DataTables -->
+  <!--<link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" rel="stylesheet">-->
+  <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa; /* Light gray background */
+    }
+    .card {
+      border: none;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      background-color: #fff; /* White background */
+    }
+    .card-header {
+      background-color: #3b5d50; /* Dark green header */
+      color: #fff; /* White text */
+      font-weight: bold;
+    }
+    .btn-primary,
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #3b5d50; /* Dark green button */
+      border-color: #3b5d50; /* Dark green border */
+    }
+    .btn-secondary,
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+      background-color: #d9e2ec; /* Light blue button */
+      border-color: #d9e2ec; /* Light blue border */
+      color: #333; /* Dark text */
+    }
+    .table {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .table th,
+    .table td {
+      border: none;
+    }
+    .table th {
+      background-color: #3b5d50; /* Dark green header */
+      color: #fff; /* White text */
+      /*color: #f9bf29;*/
+      font-weight: bold;
+      text-align: center;
+    }
+    .table td {
+      text-align: center;
+    }
+    .btn-primary:hover {
+      background-color: #2e4c40;
+    color: #f9bf29;
+    }
+    .btn-secondary:hover {
+      background-color: #c5d4de;
+    }
+    .p{
+      padding-left: 350px;
+      padding-top: 40px;
+      font-size: larger;
+      font-weight: bolder
 
-			<!-- Table Panel -->
-			<div class="col-md-8">
-				<div class="card">
-					<div class="card-header">
-						<b>Category List</b>
-					</div>
-					<div class="card-body">
-						<table class="table table-bordered table-hover">
-							<thead>
-								<tr>
-									<th class="text-center">#</th>
-									<th class="text-center">Category</th>
-									<th class="text-center">Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-								$i = 1;
-								$category = $conn->query("SELECT * FROM categories order by id asc");
-								while($row=$category->fetch_assoc()):
-								?>
-								<tr>
-									<td class="text-center"><?php echo $i++ ?></td>
-									<td class="">
-										<p><b><?php echo $row['name'] ?></b></p>
-									</td>
-									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_category" type="button" data-id="<?php echo $row['id'] ?>"  data-name="<?php echo $row['name'] ?>" >Edit</button>
-										<button class="btn btn-sm btn-danger delete_category" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
-									</td>
-								</tr>
-								<?php endwhile; ?>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<!-- Table Panel -->
-		</div>
-	</div>	
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- FORM Panel -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+          Add Category
+          </div>
+          <div class="card-body">
+            <form action="" id="manage-category">
+              <input type="hidden" name="id">
+              <div class="form-group">
+                <label class="control-label">Name</label>
+                <input type="text" class="form-control" name="name">
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="btn btn-primary btn-block">Save</button>
+                  <button class="btn btn-secondary btn-block" type="button" onclick="$('#manage-category').get(0).reset()">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- FORM Panel -->
 
-</div>
-<style>
-	
-	td{
-		vertical-align: middle !important;
-	}
-</style>
+      <!-- Table Panel -->
+      <div class="col-md-8">
+        <div class="card">
+        <div class="row mt-4 mb-4">
+            <div class="col-md-6">
+                <h4 class="card-title">Category List</h4>
+            </div>
+        </div>
+           <p class="p"> Category List</p>
+          
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Category</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+                $i = 1;
+                $category = $conn->query("SELECT * FROM categories order by id asc");
+                while($row=$category->fetch_assoc()):
+                ?>
+                <tr>
+                  <td><?php echo $i++ ?></td>
+                  <td><?php echo $row['name'] ?></td>
+                  <td>
+                    <button class="btn btn-primary btn-sm edit_category" type="button" data-id="<?php echo $row['id'] ?>"  data-name="<?php echo $row['name'] ?>">Edit</button>
+                    <button class="btn btn-danger btn-sm delete_category" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
+                  </td>
+                </tr>
+                <?php endwhile; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Table Panel -->
+    </div>
+  </div>
+</body>
+</html>
+
 <script>
 	
 	$('#manage-category').submit(function(e){

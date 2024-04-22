@@ -17,7 +17,7 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-  <link href="assets/DataTables/datatables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" rel="stylesheet">
   <link href="assets/css/jquery.datetimepicker.min.css" rel="stylesheet">
   <link href="assets/css/select2.min.css" rel="stylesheet">
 
