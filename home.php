@@ -1,51 +1,57 @@
 <?php
 include 'admin/db_connect.php';
 ?>
-<style>
-    #cat-list li {
-        cursor: pointer;
+<!-- <style>
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
     }
 
-    #cat-list li:hover {
-        color: white;
-        background: #007bff8f;
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
     }
+</style> -->
 
-    .prod-item p {
-        margin: unset;
-    }
-
-    .bid-tag {
-        position: absolute;
-        right: .5em;
-    }
-</style>
 <?php
 $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
 ?>
-<div class="contain-fluid">
-    <div class="col-lg-12">
-        <div class="row">
+	<div class="untree_co-section product-section before-footer-section">
+		    <div class="container">
+		      	<div class="row">
             <div class="col-md-3">
-                <div class="card">
-                    <div class="card-header">Categories</div>
+                <main>
+                 
                     <div class="card-body">
                         <ul class="list-group" id="cat-list">
-                            <li class="list-group-item" data-id="all" data-href="index.php?page=home&category_id=all">
-                                All</li>
+                            <li li class="list-group-item" data-id="all"
+                                data-href="index.php?page=home&category_id=all">
+
+
+                                All
+
+                            </li>
                             <?php
                             $cat = $conn->query("SELECT * FROM categories ORDER BY name ASC");
                             while ($row = $cat->fetch_assoc()):
                                 $cat_arr[$row['id']] = $row['name'];
                                 ?>
-                                <li class="list-group-item" data-id="<?php echo $row['id'] ?>"
+                                <li li class="list-group-item" data-id="<?php echo $row['id'] ?>"
                                     data-href="index.php?page=home&category_id=<?php echo $row['id'] ?>">
-                                    <?php echo ucwords($row['name']) ?></li>
+
+                                    <?php echo ucwords($row['name']) ?>
+                                </li>
                             <?php endwhile; ?>
                         </ul>
                     </div>
-                </div>
+                </main>
             </div>
+            
 
             <div class="col-md-9">
                 <div class="card">
@@ -69,8 +75,10 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                                                     class="fa fa-tag"></i>
                                                 <?php echo number_format($row['start_bid']) ?></span>
                                         </div>
-                                        <img class="card-img-top" src="admin/assets/uploads/<?php echo $row['img_fname'] ?>"
-                                            alt="Card image cap">
+
+                                            <img src="admin/assets/uploads/<?php echo $row['img_fname'] ?>"
+                                                class="card-img-top" alt="..." >
+
                                         <div class="float-right align-top d-flex">
                                             <span class="badge badge-pill badge-warning text-white"><i
                                                     class="fa fa-hourglass-half"></i>
