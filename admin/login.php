@@ -39,115 +39,67 @@ header("location:index.php?page=home");
 
 </head>
 <style>
-	body{
-		width: 100%;
-	    height: calc(100%);
-	    /*background: #007bff;*/
-	}
-	main#main{
-		width:100%;
-		height: calc(100%);
-		background:white;
-	}
-	#login-right{
-		position: absolute;
-		right:0;
-		width:40%;
-		height: calc(100%);
-		background:white;
-		display: flex;
-		align-items: center;
-	}
-	#login-left{
-		position: absolute;
-		left:0;
-		width:60%;
-		height: calc(100%);
-		background:#59b6ec61;
-		display: flex;
-		align-items: center;
-		background: url(assets/uploads/<?php echo $_SESSION['system']['cover_img'] ?>);
-	    background-repeat: no-repeat;
-	    background-size: cover;
-	}
-	#login-right .card{
-		margin: auto;
-		z-index: 1
-	}
-	.logo {
-    margin: auto;
-    font-size: 8rem;
-    background: white;
-    padding: .5em 0.7em;
-    border-radius: 50% 50%;
-    color: #000000b3;
-    z-index: 10;
-}
-div#login-right::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100%);
-    height: calc(100%);
-    background: #000000e0;
-}
-
-</style>
-
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+    .login-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .login-form {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .login-form h2 {
+      margin-bottom: 30px;
+      text-align: center;
+	    font-weight: bolder;
+      color: #f9bf29;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .btn-login {
+      width: 100%;
+      background-color: #3b5d50;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn-login:hover {
+		background-color: #2e4c40;
+    color: #f9bf29;
+    }
+  </style>
+</head>
 <body>
-
-
- 
-  	<div class="untree_co-section">
-      <div class="container">
-
-        <div class="block">
-          <div class="row justify-content-center">
-
-
-            <div class="col-md-8 col-lg-8 pb-4">
-
-
-				<form id="login-form" >
-				
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="username">Username</label>
-                      <input type="text" class="form-control" id="username" name="username">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-				<div class="col-6">
-                  <label class="text-black" for="password">Password</label>
-                 
-				  <input type="password" class="form-control" id="password" name="password">
-                </div></div>
-
-
-
-                <button type="submit" class="btn btn-primary-hover-outline">Login</button>
-              </form>
-
-            </div>
-
-          </div>
-
+  <div class="login-container">
+    <div class="login-form">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" required>
         </div>
-
-      </div>
-
-
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-login">Login</button>
+      </form>
     </div>
-   
-
-  
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-
+  </div>
 </body>
 <script>
 	$('#login-form').submit(function(e){
