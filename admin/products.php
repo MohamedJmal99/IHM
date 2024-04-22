@@ -125,6 +125,7 @@
       background: #f8b810;
       border-color: #f8b810; }
 	
+<<<<<<< HEAD
     .table {
       border-radius: 10px;
       overflow: hidden;
@@ -170,6 +171,22 @@
       font-size: larger;
       font-weight: bolder;
     }
+=======
+	td{
+		vertical-align: middle !important;
+	}
+	td p{
+		margin: unset
+	}
+	table td img{
+		max-width:100px;
+		max-height: 150px;
+	}
+	img{
+		max-width:100px;
+		max-height: 150px;
+	}
+>>>>>>> f7411a80f62a8a1a0bcc05c3eddcd6ae224fcfbd
 </style>
 <script>
 	$(document).ready(function(){
