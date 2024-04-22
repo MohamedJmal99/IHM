@@ -33,12 +33,14 @@
 
   // Collapse Navbar
   var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-scrolled");
+    var mainNav = $("#mainNav");
+    if (mainNav.length && mainNav.offset().top > 100) {
+      mainNav.addClass("navbar-scrolled");
     } else {
-      $("#mainNav").removeClass("navbar-scrolled");
+      mainNav.removeClass("navbar-scrolled");
     }
   };
+  
   // Collapse now if page is not at top
   navbarCollapse();
   // Collapse the navbar when page is scrolled
