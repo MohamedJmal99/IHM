@@ -68,7 +68,7 @@ include ('header.php');
                 href="admin/ajax.php?action=logout2"><?php echo "Welcome " . $_SESSION['login_name'] ?> <i
                   class="fa fa-power-off"></i></a></li>
           <?php else: ?>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" id="login_now" onclick="uni_modal(Login', 'login.php')">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" id="login_now" onclick="uni_modal('Login', 'login.php')">Login</a></li>
           <?php endif; ?>
 
             
