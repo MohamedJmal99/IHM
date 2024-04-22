@@ -32,10 +32,10 @@ a {
 
 .custom-navbar {
   background: #3b5d50 !important;
-  padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-top: 15px;
+  padding-bottom: 15px; }
   .custom-navbar .navbar-brand {
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 600; }
     .custom-navbar .navbar-brand > span {
       opacity: .4; }
@@ -51,6 +51,7 @@ a {
       margin-right: 15px; } }
   .custom-navbar .custom-navbar-nav li a {
     font-weight: 500;
+    font-size: 20px;
     color: #ffffff !important;
     opacity: .5;
     -webkit-transition: .3s all ease;
@@ -709,3 +710,90 @@ textarea {
     height: 50px;
     border-radius: 50%;
     background: rgba(59, 93, 80, 0.2); }
+
+    .badge {
+      display: inline-block;
+      padding: .35em .65em;
+      font-size: .75em;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      border-radius: .25rem;
+      background-color: #f9bf29;
+  }
+  
+  .searchIcon {
+    display: flex;
+    align-items: center;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    /* background-color: #e9ecef; */
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.searchGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0 15px; */
+  padding-left: 22%;
+  padding-right: 10%;
+  width: 60%;
+}
+
+.roundedSearch {
+  border-radius: 20px;
+}
+
+
+
+
+
+
+#cat-list li {
+  cursor: pointer;
+}
+
+#cat-list li:hover {
+  color: white;
+  background: #007bff8f;
+}
+
+.card {
+  border: none;
+  border-radius: 0;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 0;
+}
+
+.list-group-item {
+  border: none;
+  border-radius: 0;
+}
+
+.list-group-item.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.prod-item p {
+  margin: unset;
+}
+
+.bid-tag {
+  position: absolute;
+  right: .5em;
+}
