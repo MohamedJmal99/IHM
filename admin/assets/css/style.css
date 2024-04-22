@@ -1637,7 +1637,7 @@ a.nav-item {
     font-weight: 600;
 }
 a.nav-item:hover, .nav-item.active {
-    background-color: #000000ad;
+    background-color: #F9BF29 !important;
     color: #fffafa;
 }
 main#view-panel{
@@ -1729,3 +1729,4 @@ span.select2-selection.select2-selection--single {
 }
 span.select2-selection__arrow {
     top: .3rem !important;
+}
