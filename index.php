@@ -1,24 +1,31 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
   <link rel="shortcut icon" href="favicon.png">
 
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style1.css" rel="stylesheet">
-	</head>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style1.css" rel="stylesheet">
+</head>
 
 <?php
 session_start();
-include ('admin/db_connect.php');
+include('admin/db_connect.php');
 ob_start();
 $query = $conn->query("SELECT * FROM system_settings limit 1")->fetch_array();
 foreach ($query as $key => $value) {
@@ -26,7 +33,7 @@ foreach ($query as $key => $value) {
     $_SESSION['system'][$key] = $value;
 }
 ob_end_flush();
-include ('header.php');
+include('header.php');
 
 
 ?>
@@ -44,40 +51,57 @@ include ('header.php');
 
     <div class="container">
 
-      <a class="custom-navbar navbar-brand " href="./">IHM BIDDING</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <a class="custom-navbar navbar-brand " href="./" style="display: flex;align-items: center !important;"><img src="./images/enchere1.png" alt="auction-icon" style="margin: auto 10px; width: 40px !important;">MDS BIDDING</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="searchGroup">
-        
-  <input type="search" class="form-control roundedSearch" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-  <span class="searchIcon border-0" id="search-addon">
-    <i class="fas fa-search"></i>
-  </span>
-  </div>
+
+        <input type="search" class="form-control roundedSearch" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <span class="searchIcon border-0" id="search-addon">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
 
       <div class="collapse navbar-collapse" id="navbarsFurni">
-        
+
         <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-          
+
           <li class="nav-item "><a class="nav-link" href="index.php?page=home">Home</a></li>
 
           <li class="nav-item"><a class="nav-link" href="index.php?page=about">About us</a></li>
-          <?php if (isset($_SESSION['login_id'])): ?>
-            <li class="nav-item"><a class="nav-link"
-                href="admin/ajax.php?action=logout2"><?php echo "Welcome " . $_SESSION['login_name'] ?> <i
-                  class="fa fa-power-off"></i></a></li>
-          <?php else: ?>
+          <?php if (isset($_SESSION['login_id'])) : ?>
+            <li class="nav-item"><a class="nav-link" href="admin/ajax.php?action=logout2"><?php echo "Welcome " . $_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a></li>
+          <?php else : ?>
             <li class="nav-item"><a class="nav-link" href="javascript:void(0)" id="login_now" onclick="uni_modal('Login', 'login.php')">Login</a></li>
           <?php endif; ?>
 
-            
+
 
         </ul>
       </div>
     </div>
   </nav>
   <main>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="./images/salon.webp">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./images/Car.jpeg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./images/electromenager.jpg" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
     <?php
     $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     include $page . '.php';
@@ -109,8 +133,7 @@ include ('header.php');
         <div class="modal-body">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id='submit'
-            onclick="$('#uni_modal form').submit()">Save</button>
+          <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </div>
@@ -143,41 +166,48 @@ include ('header.php');
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="mt-0 text-white">Contact us</h2>
+          <h2 class="mt-0 text-white" style="color: #3b5d50 !important;">Contact us</h2>
           <hr class="divider my-4" />
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div class="text-white"><?php echo $_SESSION['system']['contact'] ?></div>
+      <div class="row" style="justify-content: space-around;">
+        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0" style="padding: 20px;background: #fff;box-shadow: 0px 7px 29px 0px rgb(0 0 0 / 26%);border-radius: 20px;border-top: 3px solid #3b5d50;width: 100%;max-width: 400px;margin-left: 0px !important;margin-right: 40px;">
+          <i class="fas fa-phone fa-3x mb-3 text-muted" style="transform: rotate(90deg) !important;"></i>
+          <div class="text-black"><a href="tel:'<?php echo $_SESSION['system']['contact'] ?>'"><?php echo $_SESSION['system']['contact'] ?></a></div>
         </div>
-        <div class="col-lg-4 mr-auto text-center">
+        <div class="col-lg-4 mr-auto text-center" style="padding: 20px;background: #fff;box-shadow: 0px 7px 29px 0px rgb(0 0 0 / 26%);border-radius: 20px;border-top: 3px solid #3b5d50; margin-bottom: 0px !important;width: 100%;max-width: 400px;">
           <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
           <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-          <a class="d-block"
-            href="mailto:<?php echo $_SESSION['system']['email'] ?>"><?php echo $_SESSION['system']['email'] ?></a>
+          <a class="d-block" href="mailto:<?php echo $_SESSION['system']['email'] ?>"><?php echo $_SESSION['system']['email'] ?></a>
+        </div>
+        <div class="col-lg-4 mr-auto text-center" style="padding: 20px;background: #fff;box-shadow: 0px 7px 29px 0px rgb(0 0 0 / 26%);border-radius: 20px;border-top: 3px solid #3b5d50; margin-bottom: 0px !important;width: 100%;max-width: 400px;">
+          <h3 style="color:#3b5d50">SUBSCRIBE</h3>
+          <div class="social-media-icons" style="display: flex;justify-content: space-evenly;">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+          </div>
         </div>
       </div>
     </div>
     <br>
     <div class="container">
-      <div class="small text-center text-muted">Copyright © 2020 - <?php echo $_SESSION['system']['name'] ?> | <a
-          href="https://www.sourcecodester.com/" target="_blank">Sourcecodester</a></div>
+      <div class="small text-center text-muted">Copyright © 2024 - MDS BIDDING </div>
     </div>
   </footer>
 
-  <?php include ('footer.php') ?>
+  <?php include('footer.php') ?>
 </body>
 <script type="text/javascript">
-  $('#login').click(function () {
+  $('#login').click(function() {
     uni_modal("Login", 'login.php')
   })
-  
+
   $('.datetimepicker').datetimepicker({
     format: 'Y-m-d H:i',
   })
-  $('#find-car').submit(function (e) {
+  $('#find-car').submit(function(e) {
     e.preventDefault()
     location.href = 'index.php?page=search&' + $(this).serialize()
   })
