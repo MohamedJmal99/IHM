@@ -37,12 +37,12 @@
 							<div class="intro-excerpt">
 								<h1>About Us</h1>
 								<p class="mb-4" style="font-size: 18px; font-weight: bold;">Three minds, one mission: revolutionizing bidding with innovation and integrity.</p>
-								<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+								<p><a href="index.php" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
 							</div>
 						</div>
 						<div class="col-lg-7">
 							<div class="hero-img-wrap">
-								<img src="images/auction.webp" class="img-fluid">
+								<img src="images/bid.png" class="img-fluid">
 							</div>
 						</div>
 					</div>

@@ -21,13 +21,35 @@ include 'admin/db_connect.php';
 <?php
 $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
 ?>
-<div class="bids-title" style="width: 100%; ;margin-top:100px !important;;margin-bottom:75px !important">
-<h2 class="home-bids-title" style="color: #000;text-align: center;
+   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="./images/salon.webp">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./images/Car.jpeg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./images/electromenager.jpg" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+<div class="bids-title" style="width: 100%; ;margin-top:20px !important;;margin-bottom:75px !important">
+
+<h2 class="home-bids-title" style="color: #3b5d50 ;text-align: center;
     font-family: Poppins, Sans-serif;
     font-size: 50px;position: relative;text-shadow: 0px 0px 40px #000000;text-transform: uppercase;">Our Current Bids Products</h2>
     </div>
 <div class="untree_co-section product-section before-footer-section">
-    <div class="container">
+    <div class="container-home">
         <div class="row">
             <div class="col-md-3">
                 <main>
