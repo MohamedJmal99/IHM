@@ -51,7 +51,7 @@ include('header.php');
 
     <div class="container">
 
-      <a class="custom-navbar navbar-brand " href="./" style="display: flex;align-items: center !important;"><img src="./images/enchere1.png" alt="auction-icon" style="margin: auto 10px; width: 40px !important;">MDS BIDDING</a>
+      <a class="custom-navbar navbar-brand " href="./" style="display: flex;align-items: center !important;"><img src="./images/enchere1.png" alt="auction-icon" style="margin: auto 10px; width: 30px !important;">MDS BIDDING</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="searchGroup">
 
@@ -65,13 +65,13 @@ include('header.php');
 
         <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 
-          <li class="nav-item "><a class="nav-link" href="index.php?page=home">Home</a></li>
+          <li class="nav-item "><a class="nav-link" href="index.php?page=home" style="font-size: 17px;">Home</a></li>
 
-          <li class="nav-item"><a class="nav-link" href="index.php?page=about">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.php?page=about" style="font-size: 17px;">About us</a></li>
           <?php if (isset($_SESSION['login_id'])) : ?>
-            <li class="nav-item"><a class="nav-link" href="admin/ajax.php?action=logout2"><?php echo "Welcome " . $_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href="admin/ajax.php?action=logout2" style="font-size: 17px;"><?php echo "Welcome " . $_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a></li>
           <?php else : ?>
-            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" id="login_now" onclick="uni_modal('Login', 'login.php')">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="javascript:void(0)" id="login_now" onclick="uni_modal('Login', 'login.php')" style="font-size: 17px;">Login</a></li>
           <?php endif; ?>
 
 
