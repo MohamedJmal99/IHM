@@ -121,6 +121,22 @@ img#img_path-field{
 		max-height: 15vh;
 		max-width: 8vw;
 	}
+.btn{
+	color: black;
+	background-color: #f9bf29 !important;
+	border-color: #f9bf29 !important;
+	margin-left: calc(100% - 60%);
+	margin-top: 10px;
+	border-radius: 30px;
+}
+.btn:hover , .btn:active, .btn:focus{
+	color: black;
+	font-weight: bolder;
+	background-color: #f8b810 !important;
+}
+h4{
+	color: #3b5d50 !important;
+}
 </style>
 <div class="container-fluid">
 	<div class="col-lg-12">

@@ -47,6 +47,18 @@ if($qry->num_rows > 0){
 		max-height: 10vh;
 		max-width: 6vw;
 	}
+	.btn{
+	color: black;
+	background-color: #f9bf29 !important;
+	border-color: #f9bf29 !important;
+	
+	border-radius: 30px;
+}
+.btn:hover , .btn:active, .btn:focus{
+	color: black;
+	font-weight: bolder;
+	background-color: #f8b810 !important;
+}
 </style>
 
 <script>
