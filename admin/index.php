@@ -69,7 +69,7 @@
   </div>
   
   <main id="view-panel" >
-      <?php $page = isset($_GET['page']) ? $_GET['page'] :'home'; ?>
+      <?php $page = isset($_GET['page']) ? $_GET['page'] :'products'; ?>
   	<?php include $page.'.php' ?>
   	
 

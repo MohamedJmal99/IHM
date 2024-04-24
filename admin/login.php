@@ -59,7 +59,7 @@ header("location:index.php?page=home");
       margin-bottom: 30px;
       text-align: center;
 	    font-weight: bolder;
-      color: #f9bf29;
+      color: #3b5d50;
     }
     .form-group {
       margin-bottom: 20px;
@@ -69,17 +69,17 @@ header("location:index.php?page=home");
     }
     .btn-login {
       width: 100%;
-      background-color: #3b5d50;
-      color: #fff;
+      background-color: #f9bf29;
+      color: black;
+      font-weight: bold;
       border: none;
       padding: 12px;
-      border-radius: 5px;
+      border-radius: 30px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
     .btn-login:hover {
-		background-color: #2e4c40;
-    color: #f9bf29;
+      background-color: #f8b810;
     }
   </style>
 </head>
