@@ -1173,7 +1173,7 @@ textarea {
   max-height: 750px;
 }
 .carousel-item img{
-  height: 500px;
+  height: 600px;
 }
 .home-bids-title::after,.home-bids-title::before{
   content: "";
