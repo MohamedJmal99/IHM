@@ -24,13 +24,13 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="./images/salon.webp">
+          <img class="d-block w-100" src="./images/Home.webp">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="./images/Car.jpeg" alt="Second slide">
+          <img class="d-block w-100" src="./images/Car.webp" alt="Second slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="./images/electromenager.jpg" alt="Third slide">
+          <img class="d-block w-100" src="./images/Corosel2.webp" alt="Third slide">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

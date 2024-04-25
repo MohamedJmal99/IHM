@@ -17,6 +17,8 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
 </style>
 <div class="container-fluid">
     <img src="admin/assets/uploads/<?php echo $img_fname ?>" class="d-flex w-100" alt="">
+    <!-- Alert area under the image -->
+    <div id="alert_area" style="position: relative;"></div>
     <p>Name: <large><b><?php echo $name ?></b></large></p>
     <p>Category: <b><?php echo $category ?></b></p>
     <p>Starting Amount: <b><?php echo number_format($start_bid,2) ?></b></p>
@@ -42,8 +44,6 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
             </form>
         </div>
     </div>
-    <!-- Alert area within the card -->
-    <div id="alert_area" style="position: absolute; top: 10px; right: 10px; z-index: 9999;"></div>
 </div>
 <script>
     // Function to display alerts within the card

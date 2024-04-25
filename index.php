@@ -173,7 +173,7 @@ include('header.php');
     </div>
     <br>
     <div class="container">
-      <div class="small text-center text-muted">Copyright © 2024 - MDS BIDDING </div>
+
     </div>
   </footer>
 
