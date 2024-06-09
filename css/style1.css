@@ -44,6 +44,244 @@ a.more {
   padding-bottom: 15px;
 }
 
+.buttons-modal-single-product div{
+  margin: 10px auto;
+}
+
+.hero-img-wrap {
+  z-index: 1;
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  will-change: transform;
+  animation: move-astronaut 50s infinite linear both alternate;
+}
+
+.hero-img-wrap img{
+  animation: rotate-astronaut 200s infinite linear both alternate;
+}
+@keyframes move-astronaut {
+  100% {
+      transform: translate(-160px,-160px)
+  }
+}
+@keyframes rotate-astronaut {
+  100% {
+      transform: rotate(-720deg)
+  }
+}
+.testimonial {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  padding: 50px 0;
+  overflow: hidden;
+}
+.testimonial .image {
+  height: 170px;
+  width: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.testimonial .slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 30px;
+  height: 100%;
+  width: 100%;
+}
+.slide p {
+  text-align: center;
+  padding: 0 160px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+.slide .quote-icon {
+  font-size: 30px;
+  color: #4070f4;
+}
+.slide .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.details .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+.details .job {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+}
+/* swiper button css */
+.nav-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transform: translateY(30px);
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.nav-btn::after,
+.nav-btn::before {
+  font-size: 20px;
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.swiper-pagination-bullet-active {
+  background-color: #4070f4;
+}
+@media screen and (max-width: 768px) {
+  .slide p {
+    padding: 0 20px;
+  }
+  .nav-btn {
+    display: none;
+  }
+}
+.testimonial-slider {
+
+  width: 100%;
+  background-color: var(--light-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-list {
+  display: flex;
+  overflow: hidden;
+
+}
+
+.testimonial {
+  flex: 1 0 100%;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  max-width: 100%;
+}
+
+button.nav.next i, button.nav.prev i {
+  font-size: 20px;
+  color: #000;
+}
+
+.nav.next, .nav.prev {
+  display: block;
+  opacity: 1;
+}
+
+.testimonial .bi-quote {
+  font-size: 4rem;
+  color: var(--sunglow);
+  opacity: 0.75;
+}
+
+.testimonial blockquote {
+  font-size: 1.25rem;
+  margin-inline: 20px;
+}
+
+.user-info {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.user-info img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-details .name {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--dark-cyan);
+}
+
+.user-details .company {
+  color: var(--muted-color);
+}
+
+/* button navigation */
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  color: var(--paynes-gray);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.testimonial-slider:hover .nav {
+  opacity: 1;
+}
+
+.nav:hover {
+  background-color: var(--dark-cyan);
+  color: var(--light-color);
+}
+
+.nav.prev {
+  left: 10px;
+}
+
+.nav.next {
+  right: 10px;
+}
+
+/* dot navigation */
+.testimonial-slider-wrap{
+  display: flex;
+  justify-content: center ;
+}
+.dots-container {
+  text-align: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-inline: 5px;
+  background-color: var(--dot-color);
+  transition: width 0.5s;
+}
+
+.dot.active {
+  width: 30px;
+  background-color: var(--paynes-gray);
+}
 .custom-navbar .navbar-brand {
   font-size: 20px;
   font-weight: 600;

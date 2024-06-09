@@ -7,6 +7,8 @@
 
 <meta name="keywords" content="bootstrap, bootstrap4" />
 
+
+
 <!-- Bootstrap CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -14,7 +16,7 @@
 <link href="css/style1.css" rel="stylesheet">
 <title><?php echo $_SESSION['system']['name'] ?></title>
 <!-- Favicon-->
-<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="images/tryon-logo.webp" />
 <!-- Font Awesome icons (free version)-->
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 <!-- Google fonts-->

@@ -51,7 +51,7 @@ include('header.php');
 
     <div class="container">
 
-      <a class="custom-navbar navbar-brand " href="./" style="display: flex;align-items: center !important;"><img src="./images/enchere1.png" alt="auction-icon" style="margin: auto 10px; width: 30px !important;">MDS BIDDING</a>
+      <a class="custom-navbar navbar-brand " href="./" style="display: flex;align-items: center !important;"><img src="./images/tryon-logo.webp" alt="auction-icon" style="margin: auto 10px; width: 50px !important;"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="searchGroup">
 
